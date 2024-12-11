@@ -1,0 +1,2 @@
+Main-Class: gui.MainGui
+Class-Path: lib/flatlaf-3.5.2.jar
