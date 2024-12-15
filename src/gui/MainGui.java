@@ -95,9 +95,10 @@ public class MainGui extends JFrame {
         
 
         // Main window
-        JLabel lbl_titulo = new JLabel("DECIBLEDUS");
-        lbl_titulo.setBounds(55, 23, 140, 23);
-        lbl_titulo.setFont(new Font("Bahnschrift", Font.BOLD, 22));
+        JLabel lbl_titulo = new JLabel("DBLEDUS");
+        lbl_titulo.setVerticalAlignment(SwingConstants.BOTTOM);
+        lbl_titulo.setBounds(55, 14, 140, 35);
+        lbl_titulo.setFont(new Font("Corbel", Font.BOLD, 24));
         lbl_titulo.setHorizontalAlignment(SwingConstants.CENTER);
         lbl_titulo.setForeground(Color.WHITE);
         contentPane.add(lbl_titulo);
@@ -110,7 +111,7 @@ public class MainGui extends JFrame {
         btn_close.addActionListener(this::confirmClosure);
         contentPane.add(btn_close);
         
-        toggle_view = new JToggleButton(addImage("/resources/ojo.png", 20, 20));
+        toggle_view = new JToggleButton(addImage("/resources/view.png", 20, 20));
         toggle_view.setBounds(205, 11, 35, 35);
         toggle_view.addActionListener(e -> {
             boolean activateTransparency = toggle_view.isSelected();
@@ -170,7 +171,7 @@ public class MainGui extends JFrame {
         btn_stop.setBounds(149, 266, 80, 23);
         contentPane.add(btn_stop);
 
-        btn_configuration = new JButton(addImage("/resources/engranaje.png", 10, 10));
+        btn_configuration = new JButton(addImage("/resources/config.png", 10, 10));
         btn_configuration.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		ConfigurationGui ajustarBarra = new ConfigurationGui(panel_miniGraphic, captureAudio);
@@ -180,7 +181,6 @@ public class MainGui extends JFrame {
         btn_configuration.setBounds(111, 266, 30, 23);
         contentPane.add(btn_configuration);
     }
-    
     
 	/**
 	 * Methods.
@@ -288,7 +288,7 @@ public class MainGui extends JFrame {
     	int answer = JOptionPane.showConfirmDialog(
     	    null, 
     	    "Are you sure you want to exit?", 
-    	    "Confirmación", 
+    	    "Exit confirmation", 
     	    JOptionPane.YES_NO_OPTION, 
     	    JOptionPane.WARNING_MESSAGE
     	);
